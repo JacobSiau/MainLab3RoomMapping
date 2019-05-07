@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<launch>
+
+  <node pkg="pi_controller" type="pi_controller.py" name="pi_controller" output="screen">
+    <param name="rate" value="10" />
+    <param name="Kp" value="0.1" />
+    <param name="Ki" value="0.05" />
+    <param name="Kd" value="0.001" />
+    <!-- Max angular vel computed by counting the number of encoder ticks over some time.
+      rad/s = # ticks * rad/tick / dt
+       -->
+    <param name="motor_max_angular_vel" value="16.45" />
+    <param name="motor_min_angular_vel" value="9.83" />
+    <param name="motor_cmd_max" value="255" />
+    <param name="motor_cmd_min" value="70" />
+    <param name="robot_wheel_radius" value="0.03" />
+    <param name="pid_on" value="False" />
+    <param name="rover_on" value="True" />
+  </node>
+
+  <node pkg="pi_state_updater" type="pi_state_updater.py" name="pi_state_updater" output="screen">
+    <param name="rate" value="5" />
+    <param name="err_tick_incr" value="5" />
+    <param name="robot_wheel_radius" value="0.03" />
+    <param name="rover_on" value="True" />
+    <param name="lticks_per_rot" value="84" />
+    <param name="lticks_per_rot" value="84" />
+  </node>
+
+</launch>
+
+

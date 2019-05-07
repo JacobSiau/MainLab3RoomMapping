@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{home}">
+
+<head>
+
+  <title>About</title>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" layout:fragment="content">
+
+    <!-- Page Heading -->
+    <h1 class="mt-4 mb-3">About</h1>
+
+    <!-- Breadcrumbs -->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a th:href="@{/home}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">About</li>
+    </ol>
+
+    <!-- Intro Content -->
+    <div class="row">
+      <div class="col-lg-6">
+        <img class="img-fluid rounded mb-4" th:src="@{/img/BlockDiagram.jpg}" alt="Block Diagram">
+      </div>
+      <div class="col-lg-6">
+        <h2>About Lab 3 Room Mapping</h2>
+        <hr/>
+        <p>Here is the description of our project:</p>
+        <hr/>
+        <p><b>Primary Robot:</b> The primary robot will map out a "room" designed by our team with an Xbox 360 Kinect camera. The image data recieved will be condensed into arrays of depth data, and will be sent to the main web application.</p>
+        <hr/>
+        <p><b>User Interface:</b> This user interface will recieve the depth data from the primary robot and upload it to an in-memory database. The data will then reconstructed into a two-dimensional, top-down map of the "room".</p>
+        <p>After the map is reconstructed, it will be presented visually on the 'reconstruction' tab of this website. A user will be able to see the map and graphically select a route for the secondary robot to follow blindly through the "room".</p>
+        <p>This user-selected route will be validated, transformed into movement commands, and sent to the secondary robot in chunks.</p>
+        <hr/>
+        <p><b>Secondary Robot:</b> The secondary robot will follow the user-selected route through the "room" and deliver a dummy item to a previously selected spot.</p>
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /END Page Content -->
+
+  <!-- Page-Specific Scripts -->
+  <th:block layout:fragment="scripts">
+  </th:block>
+
+</body>
+
+</html>

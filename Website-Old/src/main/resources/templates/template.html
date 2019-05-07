@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{home}">
+
+<head>
+
+  <title>Template Title</title>
+
+</head>
+
+<body>
+
+  <!-- Page Heading -->
+  <h1 class="mt-4 mb-3">Template Heading</h1>
+
+  <!-- Breadcrumbs -->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a th:href="@{/home}">Home</a>
+    </li>
+    <li class="breadcrumb-item active">Template Title</li>
+  </ol>
+
+  <!-- Page Content -->
+  <div class="container" layout:fragment="content">
+
+    Template Content
+
+  </div>
+  <!-- /END Page Content -->
+
+  <!-- Page-Specific Scripts -->
+  <th:block layout:fragment="scripts">
+  </th:block>
+
+</body>
+
+</html>

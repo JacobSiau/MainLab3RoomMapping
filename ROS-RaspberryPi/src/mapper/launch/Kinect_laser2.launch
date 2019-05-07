@@ -1,0 +1,13 @@
+<launch>
+	<include file="$(find freenect_launch)/launch/freenect.launch"/>
+	
+
+	<node pkg="depthimage_to_laserscan" name="depthimage_to_laserscan" type="depthimage_to_laserscan">
+		<remap from="image" to="/camera/depth/image_raw"/>
+		<param name="range_min" value="0.45" />
+		<param name="range_max" value="3.00" />
+		<param name="scan_height" value="300" />
+	</node>
+	
+
+</launch>

@@ -1,0 +1,15 @@
+import move 
+import time
+rovermove = move.RoverMove()
+rovermove.moveL(1,255)
+rovermove.moveR(0,255)
+time.sleep(2)
+rovermove.moveL(1,100)
+rovermove.moveR(1,100)
+time.sleep(2)
+rovermove.moveL(1,255)
+rovermove.moveR(1,255)
+time.sleep(2)
+rovermove.moveL(1,0)
+rovermove.moveR(1,0)
+time.sleep(2)

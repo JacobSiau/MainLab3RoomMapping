@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<launch>
+	<node pkg="amcl" type="amcl" name="amcl" output="screen">
+		<!-- Publish scans from best pose at a max of 10 Hz -->
+		<param name="odom_model_type" value="diff"/> <!-- keep -->
+		<param name="transform_tolerance" value="0.2" /> <!-- time to post-date tf to make it valie -->
+		<param name="gui_publish_rate" value="10.0"/> <!-- Max scan publish Hz -->
+		<param name="laser_max_beams" value="60"/> <!-- num of beams to use to update filter -->
+		<param name="min_particles" value="1000"/> <!-- yeah -->
+		<param name="max_particles" value="10000"/> <!-- yeah -->
+		<param name="kld_err" value="0.05"/> <!-- max err btw true and estimated distribution -->
+		<param name="kld_z" value="0.99"/> <!-- wtf -->
+		
+		<param name="odom_alpha1" value="0.5"/> <!-- rotational est from rotational -->
+		<param name="odom_alpha2" value="0.2"/> <!-- rotational est from translational -->
+		<param name="odom_alpha3" value="0.2"/> <!-- translational est from translational -->
+		<param name="odom_alpha4" value="0.5"/> <!-- translational est from rotational -->
+		
+		<!-- all of these are wtf -->
+		<param name="laser_z_hit" value="0.5"/> <!-- wtf -->
+		<param name="laser_z_short" value="0.05"/> <!-- wtf -->
+		<param name="laser_z_max" value="0.05"/> <!-- wtf -->
+		<param name="laser_z_rand" value="0.5"/> <!-- wtf -->
+		<param name="laser_sigma_hit" value="0.2"/> <!-- wtf -->
+		<param name="laser_lambda_short" value="0.1"/> <!-- wtf -->
+		<param name="laser_model_type" value="likelihood_field"/> <!-- wtf -->
+		<param name="laser_likelihood_max_dist" value="2.0"/> <!-- also wtf -->
+		
+		<param name="update_min_d" value="0.2"/> <!-- min linear movement required before updating -->
+		<param name="update_min_a" value="0.2"/> <!-- min rotational movement required before updating -->
+		<param name="odom_frame_id" value="odom"/> <!-- easy -->
+		<param name="resample_interval" value="1"/> <!-- num of filter updates before resampling -->
+		<param name="recovery_alpha_slow" value="0.001"/> <!-- wtf but keep -->
+		<param name="recovery_alpha_fast" value="0.1"/> <!-- wtf but keep -->
+	</node>
+</launch>

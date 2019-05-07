@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+
+  <meta content="text/html, charset=UTF-8" http-equiv="Content-Type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <title>Home</title>
+
+  <!-- Bootstrap Core CSS -->
+  <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" />
+
+  <!-- Custom styles for this theme -->
+  <link th:href="@{/css/modern-business.css}" rel="stylesheet" />
+
+  <!-- Custom style for this view -->
+  <link th:href="@{/css/custom-home.css}" rel="stylesheet" />
+
+  <!-- Page-Specific CSS -->
+  <th:block layout:fragment="css">
+  </th:block>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" th:href="@{/home}">Lab 3 - Room Mapping</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/mapping}">Primary Mapping</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/reconstruction}">Map Reconstruction</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/routing}">Map Routing</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" th:href="@{/about}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/contact}">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/faq}">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" th:href="@{/ourteam}">Our Team</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- /END Navigation -->
+
+  <!-- Page Content -->
+  <div class="container" layout:fragment="content">
+
+    <h1 class="my-4">Welcome to Lab 3 Group 1's Room Mapping Interface!</h1>
+
+    <!-- Marketing Icons Section -->
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Primary Mapping</h4>
+          <div class="card-body">
+            <p class="card-text">View the primary robot's mapping progress and various other attributes on this page.</p>
+          </div>
+          <div class="card-footer">
+            <a th:href="@{/mapping}" class="btn btn-primary">Go to Mapping</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Map Reconstruction</h4>
+          <div class="card-body">
+            <p class="card-text">View the reconstructed map from the primary robot's mapping run here.</p>
+          </div>
+          <div class="card-footer">
+            <a th:href="@{/reconstruction}" class="btn btn-secondary">Go to Reconstruction</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 mb-4">
+        <div class="card h-100">
+          <h4 class="card-header">Secondary Robot Routing</h4>
+          <div class="card-body">
+            <p class="card-text">See the top-down representation of the mapped space and select a route for the secondary robot here.</p>
+          </div>
+          <div class="card-footer">
+            <a th:href="@{/routing}" class="btn btn-secondary">Go to Routing</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-lg-4 mb-4">
+          <div class="card h-100">
+            <h4 class="card-header">Group 1's GitHub Repository</h4>
+            <a href="#"><img class="card-img-top" th:src="@{/img/GitHub-Logo.png}" alt="Image Not Found ):"></a>
+            <div class="card-body">
+              <p class="card-text">Visit our repository to learn more about the project as well as view our source code!</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/JacobSiau/Lab3MainProject" class="btn btn-primary">Visit repository</a>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <hr>
+
+  </div>
+  <!-- /END Page Content -->
+
+  <!-- Footer -->
+  <footer class="py-2 bg-dark fixed-bottom">
+    <div class="container">
+      <p class="m-0 text-center text-white">Copyright &copy; Jacob Siau 2019</p>
+    </div>
+  </footer>
+  <!-- /END Footer -->
+
+  <!-- Bootstrap Core JavaScript -->
+  <script th:src="@{/js/jquery.min.js}"></script>
+  <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+  <!-- Page-Specific Scripts -->
+  <th:block layout:fragment="scripts">
+  </th:block>
+
+</body>
+
+</html>

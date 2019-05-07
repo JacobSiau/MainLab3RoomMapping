@@ -1,0 +1,8 @@
+prefix=/home/lab3/catkin_ws/install
+
+Name: diffdrive_odom
+Description: Description of diffdrive_odom
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lab3/catkin_ws/install/lib 
+Requires: 

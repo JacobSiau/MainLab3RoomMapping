@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{home}">
+
+<head>
+
+    <title>Mapping</title>
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container" layout:fragment="content">
+
+        <!-- Page Heading -->
+        <h1 class="mt-4 mb-3">Primary Robot Mapping</h1>
+
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a th:href="@{/home}">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Mapping</li>
+        </ol>
+
+        <!-- Intro Content -->
+        <div class="row">
+            <div class="col-lg-6">
+                <div id="robot_alert"></div>
+                <h2>Primary Robot Mapping Interface</h2>
+                <p>This interface will display the progress of the primary mapping robot.</p>
+                <p>A table containing robot telemetry data will be displayed to the right when the update button is
+                    clicked.</p>
+                <hr />
+                <div class="col-lg">
+                    <button type="submit" id="update-robot-depth-data-btn" class="btn btn-primary btn-lg"
+                        onclick="updateRobotDepthData()">Update</button>
+                </div>
+            </div>
+            <div class="col-lg-6" id="robot_depth_data_table"></div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /END Page Content -->
+
+    <!-- Page-Specific Scripts -->
+    <th:block layout:fragment="scripts">
+        <script th:inline="javascript">
+
+            var data = [[${robot_depth_data}]];
+
+            function updateRobotDepthData() {
+                $('#robot_depth_data_table').load("/updaterobotdepthdata", function(response, status) {
+                    console.log("updateRobotDepthData called.");
+                    console.log("Response: " + response);
+                    console.log("Status: " + status);
+                    if (status == "error") {
+                        console.log("Error with updateRobotDepthData call.");
+                        $('#robot_alert').append(
+                        "<div class='alert alert-warning alert-dismissable'>\
+                        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;\
+                        </button>Error updating table.</div>");
+                        return;
+                    }
+                    if ($(response).find("span").text() === "No data available.") {
+                        console.log("No data in table.");
+                        $('#robot_alert').append(
+                        "<div class='alert alert-danger alert-dismissable'>\
+                        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;\
+                        </button>No data available in table.</div>");
+                    } else {
+                        console.log("Data in table.");
+                        $('#robot_alert').append(
+                        "<div class='alert alert-success alert-dismissable'>\
+                        <button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;\
+                        </button>Table updated!</div>");
+                    }
+                });
+            }
+
+            $(document).ready(function () {
+                updateRobotDepthData();
+            })
+
+        </script>
+    </th:block>
+
+</body>
+
+</html>

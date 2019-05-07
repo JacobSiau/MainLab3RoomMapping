@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{home}">
+
+<head>
+
+    <title>Our Team</title>
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container" layout:fragment="content">
+
+        <!-- Page Heading -->
+        <h1 class="mt-4 mb-3">Our Team</h1>
+
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a th:href="@{/home}">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Our Team</li>
+        </ol>
+
+        <!-- Team Members - row 1 -->
+        <h2>Lab III - Group 1</h2>
+        <hr />
+
+        <div class="row">
+            <div class="col-lg">
+                <div class="card border-secondary mb-3 text-center">
+                    <div class="card-header">Team Member</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Brett Sanders</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Electrical Engineering - Hardware Lead</h6>
+                        <p class="card-text">Leads hardware design and implementation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card border-secondary mb-3 text-center">
+                    <div class="card-header">Team Member</div>
+                    <div class="card-body">
+                        <h4 class="card-title">James Paule</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Computer Engineering - Embedded Systems Lead</h6>
+                        <p class="card-text">Leads embedded development for robot movement and orientation</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Team Members - row 2 -->
+        <div class="row">
+            <div class="col-lg">
+                <div class="card border-secondary mb-3 text-center">
+                    <div class="card-header">Team Member</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Cole Lewis</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Computer Engineering - Imaging Lead</h6>
+                        <p class="card-text">Leads development for image processing and manipulation</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg">
+                <div class="card border-secondary mb-3 text-center">
+                    <div class="card-header">Team Member</div>
+                    <div class="card-body">
+                        <h4 class="card-title">Jacob Siau</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Computer Engineering - Team Lead</h6>
+                        <p class="card-text">Leads team logistics as well as overseeing full stack web development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr/>
+
+    </div>
+    <!-- /END Page Content -->
+
+    <!-- Page-Specific Scripts -->
+    <th:block layout:fragment="scripts">
+    </th:block>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_5bead/fast"
+/usr/bin/make -f CMakeFiles/cmTC_5bead.dir/build.make CMakeFiles/cmTC_5bead.dir/build
+make[1]: Entering directory '/home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_5bead.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_5bead.dir/CheckSymbolExists.c.o   -c /home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_5bead
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5bead.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_5bead.dir/CheckSymbolExists.c.o  -o cmTC_5bead -rdynamic 
+CMakeFiles/cmTC_5bead.dir/CheckSymbolExists.c.o: In function `main':
+CheckSymbolExists.c:(.text+0xa): undefined reference to `pthread_create'
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_5bead.dir/build.make:97: recipe for target 'cmTC_5bead' failed
+make[1]: *** [cmTC_5bead] Error 1
+make[1]: Leaving directory '/home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_5bead/fast' failed
+make: *** [cmTC_5bead/fast] Error 2
+
+File /home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_7ff1e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_7ff1e.dir/build.make CMakeFiles/cmTC_7ff1e.dir/build
+make[1]: Entering directory '/home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_7ff1e.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_7ff1e.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_7ff1e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7ff1e.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_7ff1e.dir/CheckFunctionExists.c.o  -o cmTC_7ff1e -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_7ff1e.dir/build.make:97: recipe for target 'cmTC_7ff1e' failed
+make[1]: *** [cmTC_7ff1e] Error 1
+make[1]: Leaving directory '/home/lab3/catkin_ws/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_7ff1e/fast' failed
+make: *** [cmTC_7ff1e/fast] Error 2
+
+

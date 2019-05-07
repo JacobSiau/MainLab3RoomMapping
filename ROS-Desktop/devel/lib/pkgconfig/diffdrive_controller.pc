@@ -1,0 +1,8 @@
+prefix=/home/lab3/catkin_ws/devel
+
+Name: diffdrive_controller
+Description: Description of diffdrive_controller
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/lab3/catkin_ws/devel/lib 
+Requires: 

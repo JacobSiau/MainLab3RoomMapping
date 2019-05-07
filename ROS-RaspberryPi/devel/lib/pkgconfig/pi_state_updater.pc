@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws/devel
+
+Name: pi_state_updater
+Description: Description of pi_state_updater
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ubuntu/catkin_ws/devel/lib 
+Requires: 

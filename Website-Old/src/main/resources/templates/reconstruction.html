@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{home}">
+
+<head>
+
+    <title>Reconstruction</title>
+
+</head>
+
+<body>
+
+    <!-- Page Content -->
+    <div class="container" layout:fragment="content">
+
+        <!-- Page Heading -->
+        <h1 class="mt-4 mb-3">Robot Map Reconstruction</h1>
+
+        <!-- Breadcrumbs -->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a th:href="@{/home}">Home</a>
+            </li>
+            <li class="breadcrumb-item active">Reconstruction</li>
+        </ol>
+
+        <!-- Text -->
+        <div class="row">
+            <div class="col-lg">
+                <h2>Map Reconstruction Interface</h2>
+                <p>This interface will show the reconstructed images from the Primary Robot's mapping run.</p>
+            </div>
+        </div>
+        <!-- Processing Canvas -->
+        <div class="row">
+            <div class="col-lg">
+                <canvas id="canvas1"></canvas>
+            </div>
+        </div>
+
+    </div>
+    <!-- /END Page Content -->
+
+    <!-- Page-Specific Scripts -->
+    <th:block layout:fragment="scripts">
+        <script type="text/javascript" th:src="@{/js/processing.js}"></script>
+        <script th:inline="javascript">
+
+            var depthData = [[${ robot_depth_data }]];
+            var imageData = [[${ robot_image_data }]];
+
+            function sketchProc(processing) {
+
+                processing.setup = function () {
+                    processing.size(1000, 600);
+                    processing.background(255);
+                    processing.stroke(0);
+                    processing.strokeWeight(4);
+                }
+
+                processing.draw = function () {
+
+                    var x;
+                    var d;
+                    var i;
+                    var pos;
+
+                    for (var j = 0; j < imageData.length; j++) {
+                        i = j % 640;
+                        d = imageData[j].depth;
+                        pos = 2.0*imageData[j].xpos;
+                        x = 100 + pos - (((((640 / 2) - i) * d * 1.08 * 2 )) / 640);
+                        processing.strokeWeight(4);
+                        processing.point(parseInt(x), parseInt(d) * 3);
+                        processing.strokeWeight(1);
+                        if (i < 480 / 3) {
+                            processing.point(100 + pos - (i * 1.08 ), i * 3);
+                            processing.point(100 + pos + (i * 1.08 ), i * 3);
+                        }
+                    }
+                }
+            }
+
+            var canvas = document.getElementById("canvas1");
+            var processingInstance = new Processing(canvas, sketchProc);
+
+        </script>
+    </th:block>
+
+</body>
+
+</html>

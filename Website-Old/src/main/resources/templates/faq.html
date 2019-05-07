@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{home}">
+
+<head>
+
+  <title>FAQ</title>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" layout:fragment="content">
+
+    <!-- Page Heading -->
+    <h1 class="mt-4 mb-3">FAQ</h1>
+
+    <!-- Breadcrumbs -->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a th:href="@{/home}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">FAQ</li>
+    </ol>
+
+    <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+      <div class="card">
+        <div class="card-header" role="tab" id="headingOne">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">FAQ Question 1</a>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="card-body">
+            Answer 1
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" role="tab" id="headingTwo">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">FAQ Question 2
+            </a>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="card-body">
+            Answer 2
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" role="tab" id="headingThree">
+          <h5 class="mb-0">
+            <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">FAQ Question 3</a>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="card-body">
+            Answer 3
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- /END Page Content -->
+
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+global_costmap:
+  global_frame: odom # keep
+  robot_base_frame: /base_link # keep
+  update_frequency: 5.0 # update of map Hz
+  static_map: true # keep
+  width: 200
+  height: 200
+  resolution: 0.05
+  inflation_radius: 0.2
+
+  transform_tolerance: 0.25 # time between publish tf [s]
+  publish_frequency: 5.0  #frequency to publish map at [s]
+

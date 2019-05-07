@@ -1,0 +1,8 @@
+<launch>
+  <node name="rencoders_publish" pkg="mapper" type="rencoders.py" >
+  </node>
+	
+  <node name="lencoders_publish" pkg="mapper" type="lencoders.py" >
+  </node>
+  
+</launch>

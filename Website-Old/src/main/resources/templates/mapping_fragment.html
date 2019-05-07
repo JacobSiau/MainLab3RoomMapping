@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+</head>
+
+<body>
+    <div th:fragment="robot_depth_data_table" th:switch="${#lists.size(data)}" id="robot_depth_data_table">
+        <span th:case="'0'">No data available.</span>
+        <span th:case="*">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Depth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="d : ${data}">
+                        <td th:text="${d.id}"></td>
+                        <td th:text="${d.depth}"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </span>
+    </div>
+</body>
+</html>

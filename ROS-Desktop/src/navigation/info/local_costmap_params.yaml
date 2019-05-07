@@ -1,0 +1,11 @@
+local_costmap:
+  global_frame: /odom
+  robot_base_frame: /base_link
+  update_frequency: 5.0 # map update Hz
+  publish_frequency: 5.0 # map publish display Hz
+  static_map: false # keep
+  rolling_window: true # keep
+  width: 4.0 # yeah
+  height: 4.0 # yeah
+  resolution: 0.05 # resolution in m/cell
+  transform_tolerance: 0.25 # seconds

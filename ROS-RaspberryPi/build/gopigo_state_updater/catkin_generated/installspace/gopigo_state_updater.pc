@@ -1,0 +1,8 @@
+prefix=/home/ubuntu/catkin_ws/install
+
+Name: gopigo_state_updater
+Description: Description of gopigo_state_updater
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/ubuntu/catkin_ws/install/lib 
+Requires: 

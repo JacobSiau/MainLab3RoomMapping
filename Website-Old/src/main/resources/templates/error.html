@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" layout:decorate="~{home}">
+
+<head>
+
+  <title>Error</title>
+
+</head>
+
+<body>
+
+  <!-- Page Content -->
+  <div class="container" layout:fragment="content">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-4 mb-3">404
+      <small>Page Not Found</small>
+    </h1>
+
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a th:href="@{/home}">Home</a>
+      </li>
+      <li class="breadcrumb-item active">Error</li>
+    </ol>
+
+    <div class="jumbotron">
+      <h1 class="display-1">404</h1>
+      <p>The page you're looking for could not be found. Here are some helpful links to get you back on track:</p>
+      <ul>
+        <li>
+          <a th:href="@{/mapping}">Primary Mapping</a>
+        </li>
+        <li>
+          <a th:href="@{/reconstruction}">Map Reconstruction</a>
+        </li>
+        <li>
+          <a th:href="@{/routing}">Map Routing</a>
+        </li>
+        <li>
+          <a th:href="@{/about}">About</a>
+        </li>
+        <li>
+          <a th:href="@{/contact}">Contact</a>
+        </li>
+        <li>
+          <a th:href="@{/faq}">FAQ</a>
+        </li>
+        <li>
+          <a th:href="@{/ourteam}">Our Team</a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.jumbotron -->
+
+  </div>
+  <!-- /.container -->
+
+</body>
+
+</html>
